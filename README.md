@@ -2,8 +2,8 @@
 ### website for ordering food online
 ----------------------------------------
 ## ● Admin
-  + ○ Can login with his pre registered email and password
-   +○ Can view products page
+   =○ Can login with his pre registered email and password
+   =○ Can view products page
          ■ Search by name
          ■ View all products
          ■ Create, update, edit and delete any product
