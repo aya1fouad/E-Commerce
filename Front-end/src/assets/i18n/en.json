@@ -1,0 +1,23 @@
+{
+    "Header": {
+        "Home": "Home",
+        "About": "About ",
+        "Cart": "Cart",
+        "UserOrder": "User Order",
+        "Profile": "Profile",
+        "Promotions": "Promotions",
+        "LogOut": "LogOut",
+        "Sign Up": "Sign Up",
+        "Welcome": "Welcome",
+        "Log in": "Log in",
+        "Languages": "Languages",
+        "Search": "Search",
+        "Efood": "e food",
+        "Product options": "Product options",
+        "AddProduct": "Add Product",
+        "modifyProduct": "modify Product",
+        "DeleteProduct": "Delete Product",
+        "Arabic": "Arabic",
+        "English": "English"
+    }
+}

@@ -1,0 +1,52 @@
+<div style="margin-top: 5vw;"></div>
+<div class="container">
+
+    <div class="card text-center m-3 ">
+        <h3 class="card-header">All Products</h3>
+        <div class="card-body ">
+            <div class="row d-flex justify-content-center align-items-center" *ngIf="AllProducts && AllProducts[0]">
+                <div class="row w-100 m-4 d-flex justify-content-center align-items-center">
+                    <mat-paginator (page)="onPageChange($event)" [length]="100" [pageSize]="6" [pageSizeOptions]="[3, 6, 24, 
+                    18]"></mat-paginator>
+                </div>
+                <div class="row w-100 d-flex justify-content-center align-items-center">
+
+
+                    <div class="col-sm-4 d-flex justify-content-center align-items-center" *ngFor="let item of items; let i = index">
+                        <div class="card mb-4 d-flex flex-column  justify-content-center align-items-center" style="width: 18rem;" *ngIf="i < 6 ">
+                            <img [src]="item.img" class="card-img-top  card-img-top" [alt]="item.name">
+                            <div class="card-body d-flex flex-column  justify-content-center align-items-center">
+                                <h3 class="card-title">{{item.Name}}</h3>
+                                <p class="card-text"><i class="fas fa-tags mr-2" *ngIf="item.status =='sale'"></i>{{item.status}} | price:{{item.Price}} </p>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                                </p>
+
+                                <div>
+                                    <i class="fas fa-utensils mr-2"></i>
+                                    <span><h3 style="display: inline-block;">{{item.resturantID.Name}}</h3></span>
+                                </div>
+
+                                <div class="share-button">
+                                    <span>More </span>
+                                    <a [routerLinkActive]="[ 'exact:true'] " routerLink="/product/{{item._id}}"><i class="fas fa-info-circle"></i>Info</a>
+                                    <a *ngIf="this.token" (click)="addToCart(item._id)"><i class="fas fa-cart-plus"></i>Cart</a>
+                                </div>
+
+                                <!-- <a routerLink="/product/{{item.resturantID._id}}/{{item._id}}" class="btn btn-primary">See More</a> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

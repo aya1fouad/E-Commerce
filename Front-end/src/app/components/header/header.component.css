@@ -1,0 +1,77 @@
+li:hover {
+    cursor: pointer;
+}
+
+.bg-light {
+    background-color: #9fb8ad !important;
+}
+
+.btn-outline-primary {
+    color: black;
+    border-color: #1e212d;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #1e212d;
+    border-color: #1e212d;
+}
+
+.navheight {
+    height: 2vw;
+}
+
+.navbar-brand {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(5, 5, 44);
+    font-size: 27px;
+}
+
+.cart {
+    position: relative;
+    font-size: 2Vw;
+    color: black;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -7px;
+    right: 1px;
+    font-size: 0.8vw;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+select {
+    /* A reset of styles, including removing the default dropdown arrow */
+    appearance: none;
+    /* Additional resets for further consistency */
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .navbar li {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+
+/* .inputSearch {} */

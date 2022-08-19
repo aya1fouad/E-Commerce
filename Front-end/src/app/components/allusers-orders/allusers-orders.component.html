@@ -1,0 +1,73 @@
+<div style="margin-top: 5vw;"></div>
+<div *ngIf="allOrders">
+    <div *ngFor="let item of allOrders" class="card mt-50 mb-50">
+        <div class="col d-flex"><span class="text-muted bold" id="orderno">order: {{item._id}}</span></div>
+        <div class="col d-flex"><span class="text-muted bold" id="orderno">user: {{item.userID.username}}</span></div>
+        <div class="col d-flex"><span class="text-muted bold" id="orderno">date: {{item.createdAt}}</span></div>
+        <div class="gap">
+
+
+            <div class="col-2 d-flex mx-auto"> </div>
+        </div>
+        <!-- <div class="title mx-auto"> Thank you for your order! </div> -->
+        <div class="main"> <span id="sub-title">
+                <p><b>Payment Summary</b></p>
+            </span>
+            <div *ngFor="let i of item.productID" class="row row-main">
+                <div class="col-3"> <img class="img-fluid" [src]="i.img"> </div>
+                <div class="col-6">
+                    <div class="row d-flex">
+                        <p><b>{{i.Name}}</b></p>
+                    </div>
+                    <div class="row d-flex">
+                        <p class="text-muted">{{i.resturantID.Name}}</p>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-end">
+                    <p><b>{{i.Price}}</b></p>
+                </div>
+            </div>
+            <hr>
+            <div class="total">
+                <div class="row">
+                    <div class="col"> <b> Total:</b> </div>
+                    <div class="col d-flex justify-content-end"> <b>{{item.total}}</b> </div>
+
+                </div>
+            </div>
+            <div class="total">
+                <div class="row">
+                    <div class="col"> <b> Status:</b> </div>
+                    <div class="col d-flex justify-content-end"> <b>{{item.status}}</b> </div>
+
+                </div>
+            </div>
+            <div class="total">
+                <div class="row">
+
+                    <button class="btn" (click)="update(item._id)"> Edit Status</button>
+
+
+                </div>
+            </div>
+
+            <div class="total">
+                <div style="display: none;" [id]='item._id' class="row">
+
+                    <form [formGroup]="ststusForm" (ngSubmit)="onSubmit(item._id,item.userID._id)">
+                        <label for="status">Choose status: </label>
+                        <select id="status" name="status" formControlName="status">
+                                <option value="delivered">Accepted</option>
+                                <option value="pending">Pending</option>
+                                <option value="processing">Rejected</option>
+                            </select>
+                        <button type="submit" name="change"> update </button>
+
+                    </form>
+                    <button (click)="cancel(item._id)">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
